@@ -47,6 +47,9 @@ headerImg.setAttribute('src', siteContent["cta"]["img-src"]);
 const middleImg = document.getElementById("middle-img");
 middleImg.setAttribute('src', siteContent["main-content"]["middle-img-src"]);
 
+const navBar = document.querySelector("nav");
+navBar.style.color = "green";
+
 const navBarA = document.querySelectorAll("nav a");
 navBarA[0].textContent = siteContent["nav"]["nav-item-1"];
 navBarA[1].textContent = siteContent["nav"]["nav-item-2"];
@@ -55,9 +58,12 @@ navBarA[3].textContent = siteContent["nav"]["nav-item-4"];
 navBarA[4].textContent = siteContent["nav"]["nav-item-5"];
 navBarA[5].textContent = siteContent["nav"]["nav-item-6"];
 
+for (i = 0; i < navBarA.length; ++i) {
+  navBarA[i].style.color = "green";
+}
+
 const pagePhrase = document.querySelector(".cta-text h1");
 pagePhrase.innerHTML = siteContent["cta"]["h1"];
-
 
 
 const button = document.querySelector(".cta-text button");
