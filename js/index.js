@@ -57,6 +57,8 @@ navBarA[5].textContent = siteContent["nav"]["nav-item-6"];
 
 const pagePhrase = document.querySelector(".cta-text h1");
 pagePhrase.textContent = siteContent["cta"]["h1"];
+pagePhrase.style.textDirection = "column";
+
 
 const button = document.querySelector(".cta-text button");
 button.textContent = siteContent["cta"]["button"];
@@ -74,3 +76,16 @@ contentP[1].textContent = siteContent["main-content"]["about-content"];
 contentP[2].textContent = siteContent["main-content"]["services-content"];
 contentP[3].textContent = siteContent["main-content"]["product-content"];
 contentP[4].textContent = siteContent["main-content"]["vision-content"];
+
+const contactH4 = document.querySelector(".contact h4");
+contactH4.textContent = siteContent["contact"]["contact-h4"];
+
+const contactP = document.querySelectorAll(".contact p");
+contactP[0].textContent = siteContent["contact"]["address"];
+contactP[1].textContent = siteContent["contact"]["phone"];
+contactP[2].textContent = siteContent["contact"]["email"];
+
+contactP[0].style.width = "200px";
+
+const footer = document.querySelector("footer p");
+footer.textContent = siteContent["footer"]["copyright"];
