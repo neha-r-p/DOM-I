@@ -47,20 +47,28 @@ headerImg.setAttribute('src', siteContent["cta"]["img-src"]);
 const middleImg = document.getElementById("middle-img");
 middleImg.setAttribute('src', siteContent["main-content"]["middle-img-src"]);
 
-const navBar = document.querySelector("nav");
+let navBar = document.querySelector("nav");
 navBar.style.color = "green";
 
-const navBarA = document.querySelectorAll("nav a");
-navBarA[0].textContent = siteContent["nav"]["nav-item-1"];
-navBarA[1].textContent = siteContent["nav"]["nav-item-2"];
-navBarA[2].textContent = siteContent["nav"]["nav-item-3"];
-navBarA[3].textContent = siteContent["nav"]["nav-item-4"];
-navBarA[4].textContent = siteContent["nav"]["nav-item-5"];
-navBarA[5].textContent = siteContent["nav"]["nav-item-6"];
+let navBarA = document.querySelectorAll("nav a");
 
-for (i = 0; i < navBarA.length; ++i) {
-  navBarA[i].style.color = "green";
-}
+navBarA.forEach((el, index) => {
+  let navLink = `nav-item-${index+1}`;
+  el.textContent = siteContent["nav"][navLink];
+  el.style.color = "green";
+})
+
+let newFrontLink = document.createElement("a")
+  newFrontLink.textContent = "Home";
+navBar.prepend(newFrontLink);
+newFrontLink.style.color = "green";
+
+let goodbyeLink = document.createElement("a")
+  goodbyeLink.textContent = "Boy Bye";
+navBar.appendChild(goodbyeLink);
+goodbyeLink.style.color = "green";
+
+
 
 const pagePhrase = document.querySelector(".cta-text h1");
 pagePhrase.innerHTML = siteContent["cta"]["h1"];
